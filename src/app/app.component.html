@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <span><mat-icon aria-hidden="false" aria-label="Loja" fontIcon="shopping_bag"></mat-icon> Projeto Produtos</span>
+</mat-toolbar>
+<mat-card appearance="outlined">
+  <div class="options">
+    <button mat-fab extended (click)="onList()">
+      <mat-icon>assignment</mat-icon>
+      <span>Consultar Lista</span>
+    </button>
+    <button mat-fab extended (click)="onAdd()">
+      <mat-icon>add</mat-icon>
+          <span>Adicionar</span>
+    </button>
+  </div>
+</mat-card>
+<router-outlet></router-outlet>

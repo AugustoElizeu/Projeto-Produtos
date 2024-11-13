@@ -1,0 +1,49 @@
+<mat-card appearance="outlined">
+  <mat-card-content>
+    Formulário do Produto
+    <form [formGroup] = 'form'>
+
+      <table class="example-full-width" cellspacing="8"><tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Código do Produto</mat-label>
+          <input matInput formControlName="codigo">
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Nome do Produto</mat-label>
+          <input matInput formControlName="nome">
+        </mat-form-field></td>
+      </tr></table>
+
+      <table class="example-full-width" cellspacing="8"><tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Preço</mat-label>
+          <input matInput formControlName="preco">
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Quantidade</mat-label>
+          <input matInput formControlName="estoque">
+        </mat-form-field></td>
+      </tr></table>
+      <table  class="example-full-width" cellspacing="0" style="width: 55%;">
+        <tr colspan="2">
+          <td style="width: 100%; justify-content:flex-start; align-content: flex-start;">
+            <mat-form-field style="width: 27em; ">
+              <mat-select formControlName="categoria">
+                <mat-option value="Cordão">Cordão</mat-option>
+                <mat-option value="Anel">Anel</mat-option>
+                <mat-option value="Pulseira">Pulseira</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+
+          </td>
+        </tr>
+      </table>
+      <table class="example-full-width" cellspacing="8"><tr>
+        <td><button mat-button (click)="onSubmit()">Adicionar</button></td>
+        <td><button mat-button color="warn" (click)="onCancel()">Cancelar</button></td>
+      </tr></table>
+    </form>
+  </mat-card-content>
+</mat-card>

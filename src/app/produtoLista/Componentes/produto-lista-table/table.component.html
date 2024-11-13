@@ -1,0 +1,43 @@
+
+ <mat-table [dataSource]="prods" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="codigo">
+      <mat-header-cell *matHeaderCellDef> codigo </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.codigo}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="nome">
+      <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="categoria">
+      <mat-header-cell *matHeaderCellDef> Categoria </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.categoria}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="estoque">
+      <mat-header-cell *matHeaderCellDef> Estoque </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.estoque}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="preco">
+      <mat-header-cell *matHeaderCellDef> preco </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.preco}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let element" class="action-column">
+        <button mat-icon-button aria-label="Editar Produto">
+          <mat-icon (click)="onEdit(element)">edit</mat-icon>
+        </button>
+        <button mat-icon-button aria-label="Remover Produto" color="warn">
+          <mat-icon (click)="onDelete(element)">delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
